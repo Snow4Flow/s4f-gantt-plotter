@@ -2,4 +2,3 @@ matplotlib
 mplcursors
 pandas
 openpyxl
-unittest
