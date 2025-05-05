@@ -22,17 +22,12 @@ rcParams['font.sans-serif'] = FONT_SANS_SERIF
 rcParams['axes.titlesize'] = TITLE_SIZE
 rcParams['axes.labelsize'] = LABEL_SIZE
 
-def load_tasks(file_path, sheet_name, header, nrows, skiprows):
+def load_tasks(file_path):
     """
-    Loads data from an Excel spreadsheet into a Pandas dataframe.
+    Loads data from an CSV into a Pandas dataframe.
     """
     try:
-        tasks = pd.read_excel(
-            file_path, 
-            sheet_name=sheet_name, 
-            header=header, 
-            nrows=nrows, 
-            skiprows=skiprows)
+        tasks = pd.read_csv(file_path)
         
         tasks.columns = [
             'task_id', 'team', 'dependencies', 'task_group', 'task_description',
@@ -82,6 +77,7 @@ def plot_gantt(tasks, output_path=None):
     bars = []
 
     for _, task in tasks.iterrows():
+        print(task)
         duration = (task['end_date'] - task['start_date']).days
         bar = ax.barh(
                 task['task_group'],
@@ -95,9 +91,10 @@ def plot_gantt(tasks, output_path=None):
         for rect in bar:
             rect.annotation = (
                 f"{task.start_date.strftime('%d/%b/%y')} - {task.end_date.strftime('%d/%b/%y')}\n"
-                f"Duration: {duration}\n"
-                f"Task group: {task.task_group}\n"
-                f"Team: {task.team}"
+                f"Duration: {duration} days\n"
+                f"Task: {task.task_group}\n"
+                f"Objective: {task.team}\n"
+                #f"Details: {task['task_description']}"
             )
             bars.append(rect)
         

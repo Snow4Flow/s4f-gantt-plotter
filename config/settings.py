@@ -2,7 +2,7 @@
 DATE_FORMAT = '%Y-%m-%d'
 
 # chart 
-TITLE = "Super Cool Project"
+TITLE = "Snow4Flow Milestones"
 TITLE_SIZE = 12
 TITLE_FONT_WEIGHT = "bold"
 
@@ -18,10 +18,13 @@ MONTH_FONT_WEIGHT = "bold"
 
 BAR_COLOR = "#30C7DC"
 TEAM_BAR_COLORS = {
-    "Technology": "#56778f",
-    "Business": "#91be6f",
-    "Finance": "#ff6e61",
-    "Marketing": "#f9c54e"
+    "Reviews/Meetings": "#d35400",
+    "Data Processing": "#2980b9",
+    "Field Campaign": "#27ae60",
+    "Site Visits": "#1abc9c",
+    "Aircraft Procurement": "#e74c3c",
+    "Science Team Selection": "#f1c40f",
+    "AK26": "#9b59b6"
 }  
 
 FONT_FAMILY = "sans-serif"
