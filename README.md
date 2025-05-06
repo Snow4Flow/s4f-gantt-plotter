@@ -1,19 +1,22 @@
-# gantt-plotter
-This project generates a Gantt chart from an Excel file.
+# s4f-gantt-plotter
+This project generates a MatPlotLib Gantt chart from an CSV file generated using [s4f-notion-gantt](https://github.com/Snow4Flow/s4f-notion-gantt).
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/anacds/gantt-plotter.git
-   cd gantt-plotter
+   git clone https://github.com/Snow4Flow/s4f-gantt-plotter.git
+   cd s4f-gantt-plotter
+   ```
 
 2. Create a virtual environment
    ```bash
    python -m venv venv
    source venv/bin/activate
+   ```
 
 3. Install the dependencies
    ```bash
    pip install -r requirements.txt
+   ```
 
 ## Requirements
 - Python 3.8+
@@ -23,15 +26,18 @@ This project generates a Gantt chart from an Excel file.
 - mplcursors
 
 ## Usage
-1. Prepare your Excel file (`data/project_tasks.xlsx`) with columns:
-   - task_id, team, dependencies, task_group, task_description, start_date, end_date
+1. Prepare your CSV file using [s4f-notion-gantt](https://github.com/Snow4Flow/s4f-notion-gantt).
 
-2. Run the visualization:
+2. Copy the generated CSV file to the data/ directory
+```bash
+(venv) s4f-notion-gantt % cp timeline.csv ../s4f-notion-gantt/data/
+```
+3. Run the visualization:
 ```bash
 python main.py
 ```
 
-3. To save the chart, modify `output_path` in `main.py`
+4. To save the chart, modify `output_path` in `main.py`
 
 ## Configuration
 Modify `config/settings.py` to customize:
